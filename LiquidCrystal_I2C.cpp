@@ -141,10 +141,7 @@ void LiquidCrystal_I2C::home(){
 }
 
 void LiquidCrystal_I2C::setCursor(uint8_t col, uint8_t row){
-	int row_offsets[] = { 00, 32, 16, 48};
-	if ( row > _numlines ) {
-		row = _numlines-1;    // we count rows starting w/0
-	}
+	int row_offsets[] = { 00, 16, 8, 24};
 	command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
 }
 
