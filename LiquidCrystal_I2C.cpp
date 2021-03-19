@@ -140,7 +140,7 @@ void LiquidCrystal_I2C::home(){
 	delayMicroseconds(2000);  // this command takes a long time!
 }
 
-void LiquidCrystal_I2C::setCursor(uint8_t col, uint8_t row){
+void LiquidCrystal_I2C::setCursor(uint8_t row,uint8_t col){
 	int row_offsets[] = { 00, 16, 8, 24};
 	command(LCD_SETDDRAMADDR | (col + row_offsets[row]));
 }
